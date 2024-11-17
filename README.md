@@ -84,7 +84,7 @@ struct ExampleView : View {
     }
 }
 ```
-![GitHub Logo](https://github.com/caleyass/Diagram3d/blob/main/images/barChart.png)
+![GitHub Logo](https://github.com/caleyass/Diagram3d/blob/main/images/pieChart.png)
 
 ## Realization description
 
