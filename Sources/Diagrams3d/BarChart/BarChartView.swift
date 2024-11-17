@@ -157,22 +157,22 @@ public struct BarChartView: UIViewRepresentable {
         renderer.rotate(byRadians: angle, axis: axis)
     }
     
-    /// Rotates the text labels by a specified angle in degrees around a given axis.
+    /// Rotates of text not realized yet
     ///
     /// - Parameters:
     ///   - angle: The rotation angle in degrees.
     ///   - axis: The axis (`.x`, `.y`, or `.z`) to rotate around.
     public mutating func rotateText(byDegrees angle: Float, axis: Axis) {
-        rotationAngle = angle
-        renderer.rotateText(byDegrees: angle, axis: axis)
+//        rotationAngle = angle
+//        renderer.rotateText(byDegrees: angle, axis: axis)
     }
     
-    /// Rotates the text labels by a specified angle in radians around a given axis.
+    /// Rotates of text not realized yet
     ///
     /// - Parameters:
     ///   - angle: The rotation angle in radians.
     ///   - axis: The axis (`.x`, `.y`, or `.z`) to rotate around.
     public func rotateText(byRadians angle: Float, axis: Axis) {
-        renderer.rotateText(byRadians: angle, axis: axis)
+//        renderer.rotateText(byRadians: angle, axis: axis)
     }
 }

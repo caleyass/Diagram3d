@@ -1,11 +1,9 @@
-//
-//  .swiftlint.yml
-//  Diagrams3d
-//
-//  Created by Olesia Petrova on 17.11.2024.
-//
-
-trailing_whitespace:
-  warning: true
-  ignores_empty_lines: true
-  ignores_comments: true
+disabled_rules: # rule identifiers to exclude from linting
+  - trailing_whitespace
+  - line_length
+opt_in_rules: # some rules are only opt-in
+  - empty_count
+included: # paths to include during linting. `""` means all files.
+  - .
+excluded: # paths to ignore during linting
+  - Pods
