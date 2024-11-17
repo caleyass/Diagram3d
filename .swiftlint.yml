@@ -1,0 +1,11 @@
+//
+//  .swiftlint.yml
+//  Diagrams3d
+//
+//  Created by Olesia Petrova on 17.11.2024.
+//
+
+trailing_whitespace:
+  warning: true
+  ignores_empty_lines: true
+  ignores_comments: true
