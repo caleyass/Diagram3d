@@ -135,6 +135,7 @@ class PieChartRenderer: ChartRenderer {
         let path = UIBezierPath()
         path.move(to: CGPoint(x: 0, y: 0))
         path.addArc(withCenter: CGPoint(x: 0, y: 0), radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+        path.flatness = 0.01
         path.close()
         
         let halfCircle = SCNShape(path: path, extrusionDepth: height)
