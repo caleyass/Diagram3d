@@ -61,7 +61,7 @@ public struct BarChartView: UIViewRepresentable {
     
     /// Initializes a `BarChartView` with an array of labeled bar values.
     ///
-    /// - Parameter values: An array of tuples containing a label and a bar value.
+    /// - Parameter values: An array of tuples containing a label and a bar value (height).
     public init?(values: [(String, CGFloat)]) {
         guard let data = BarChartData(values: values) else { return nil }
         self.data = data
@@ -70,7 +70,7 @@ public struct BarChartView: UIViewRepresentable {
     
     /// Initializes a `BarChartView` with an array of labeled bar values and bar heights.
     ///
-    /// - Parameter values: An array of tuples containing a label, a bar value, and a bar height.
+    /// - Parameter values: An array of tuples containing a label, a bar value, and a bar z-value.
     public init?(values: [(String, CGFloat, CGFloat)]) {
         guard let data = BarChartData(values: values) else { return nil }
         self.data = data

@@ -48,7 +48,6 @@ class BarChartData: ChartDataAxis {
     /// Initializes the bar chart data with an array of `CGFloat` values.
     ///
     /// - Parameter values: An array of `CGFloat` values representing the heights of the bars.
-    /// - Returns: A new `BarChartData` instance, or `nil` if initialization fails.
     required convenience init?(values: [CGFloat]) {
         let barNodes = values.map { BarNode(value: $0) }
         self.init(_barNodes: barNodes)
@@ -57,7 +56,6 @@ class BarChartData: ChartDataAxis {
     /// Initializes the bar chart data with an array of labeled values.
     ///
     /// - Parameter values: An array of tuples containing a label and a bar value.
-    /// - Returns: A new `BarChartData` instance, or `nil` if initialization fails.
     convenience init?(values: [(String, CGFloat)]) {
         let barNodes = values.map { BarNode(title: $0.0, value: $0.1) }
         self.init(_barNodes: barNodes)
@@ -66,7 +64,6 @@ class BarChartData: ChartDataAxis {
     /// Initializes the bar chart data with an array of labeled values and `zValue`.
     ///
     /// - Parameter values: An array of tuples containing a label, a bar value, and a `zValue`.
-    /// - Returns: A new `BarChartData` instance, or `nil` if initialization fails.
     convenience init?(values: [(String, CGFloat, CGFloat)]) {
         let barNodes = values.map { BarNode(title: $0.0, value: $0.1, zValue: $0.2) }
         self.init(_barNodes: barNodes)
@@ -75,7 +72,6 @@ class BarChartData: ChartDataAxis {
     /// Initializes the bar chart data with a direct array of `BarNode` objects.
     ///
     /// - Parameter barNodes: An array of `BarNode` objects representing the bars.
-    /// - Returns: A new `BarChartData` instance, or `nil` if initialization fails.
     convenience init?(barNodes: [BarNode]) {
         self.init(_barNodes: barNodes)
     }

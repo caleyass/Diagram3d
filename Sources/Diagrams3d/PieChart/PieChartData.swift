@@ -45,7 +45,6 @@ class PieChartData: ChartData {
     /// Initializes the pie chart data with an array of `PieSlice` values.
     ///
     /// - Parameter values: An array of `PieSlice` objects.
-    /// - Returns: A new `PieChartData` instance, or `nil` if the input is invalid.
     init?(values: [PieSlice]) {
         let totalValue = values.reduce(0) { $0 + $1.value }
         

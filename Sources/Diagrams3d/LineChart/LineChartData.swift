@@ -52,7 +52,6 @@ class LineChartData: ChartDataAxis {
     /// Initializes the line chart data with an array of `LinePoint` objects.
     ///
     /// - Parameter points: An array of `LinePoint` objects representing the chart's data.
-    /// - Returns: A new `LineChartData` instance, or `nil` if the input is invalid.
     init?(points: [LinePoint]) {
         self.nodes = points
         

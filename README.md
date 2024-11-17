@@ -23,7 +23,7 @@ Installation accesible via Cocapods and SPM using GitHub repository link.
 ### Cocoapods
 
 Add to Podfile
-`pod 'Diagram3d', :git => 'https://github.com/caleyass/Diagram3d'`
+`pod 'Diagram3d'
                                                 
 ## Examples
 
@@ -88,7 +88,6 @@ struct ExampleView : View {
 
 ## Realization description
 
-Each View is initialized via View class with specific parameters. After initialization you can set style , rotation, camera position or disable camera. Initializers contains array of CGFloat - it would initialize 3d chart with 1-dimensional value, or turples with CGFloat and Strings - it would initialize 3d chart with (2-3)-dimensional values and title for each chart node.
-
-
-
+Each View is initialized via View class with specific parameters - approproate turple of CGFloat and optionally String.
+Several CGFloat in init means that chart would have 2 or 3 dimensional values. 
+Initialize a view before using it. Then set styles, rotation, camera position you want to apply, or disable camera movement.

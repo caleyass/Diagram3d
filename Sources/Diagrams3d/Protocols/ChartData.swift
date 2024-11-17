@@ -41,7 +41,6 @@ protocol ChartData {
     /// Initializes a new chart data instance with the given values.
     ///
     /// - Parameter values: An array of `CGFloat` values representing the chart's data.
-    /// - Returns: A new chart data instance, or `nil` if initialization fails.
     init?(values: [CGFloat])
 }
 
