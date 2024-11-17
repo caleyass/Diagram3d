@@ -44,7 +44,7 @@ struct ExampleView : View {
     }
 }
 ```
-![GitHub Logo](https://github.com/caleyass/Diagram3d/tree/main/Sources/Diagrams3d/barChart.png)
+![GitHub Logo](https://github.com/caleyass/Diagram3d/tree/main/images/barChart.png)
 
 ### Line Chart
 
@@ -65,7 +65,7 @@ struct ExampleView : View {
     }
 }
 ```
-![GitHub Logo](https://github.com/caleyass/Diagram3d/tree/main/Sources/Diagrams3d/lineChart.png)
+![GitHub Logo](https://github.com/caleyass/Diagram3d/tree/main/images/lineChart.png)
 
 ### Pie Chart
 
@@ -84,7 +84,7 @@ struct ExampleView : View {
     }
 }
 ```
-![GitHub Logo](https://github.com/caleyass/Diagram3d/tree/main/Sources/Diagrams3d/pieChart.png)
+![GitHub Logo](https://github.com/caleyass/Diagram3d/tree/main/images/pieChart.png)
 
 ## Realization description
 
