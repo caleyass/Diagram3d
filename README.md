@@ -1,19 +1,86 @@
-# 3D Chart Renderer
+# Diagram3d
 
-This project provides a flexible framework for rendering 3D charts in a SceneKit scene. It supports multiple chart types such as bar charts, pie charts, and line charts, with customizable styles, axes, and labels.
+This framework provides a flexible framework for rendering 3D charts in a SceneKit scene and has a SwiftUI integration. It supports bar chart, pie chart, and line chart, with customizable styles, axes, labels, and rotation angles. You can adjust camera control and position.
 
 ## Features
 
-- **3D Bar Charts**: Render bar charts with customizable bar width, spacing, colors, and chamfer radius.
-- **3D Line Charts**: Render line charts with configurable line thickness and colors.
-- **3D Pie Charts**: Render pie charts with labels, customizable colors, and heights.
-- **Customizable Axes**: Add labeled X, Y, and Z axes to your charts.
+- **Bar Chart**: Render bar charts with customizable bar width, spacing, colors, and chamfer radius.
+- **Line Chart**: Render line charts with configurable line thickness and colors.
+- **Pie Chart**: Render pie charts with labels, customizable colors, and heights.
+- **Customizable Axes**: You are provided with X, Y, and Z axes to your charts, with style you can edit: adjust thickness of line, arrow size, font size.
 - **SwiftUI Integration**: Use `UIViewRepresentable` components to integrate charts into SwiftUI views.
 
 ## Installation
 
+Installation accesible via Cocapods and SPM using GitHub repository link.
+
+### SPM using GitHub repository link
+
+`https://github.com/caleyass/Diagram3d`
+
+### Cocoapods
+
+Add to Podfile
+`pod 'Diagram3d', :git => 'https://github.com/caleyass/Diagram3d'`
                                                 
-                                                
+## Examples
+
+### Bar Chart
+
+```swift
+struct ExampleView : View {
+    
+    @State private var chartView : BarChartView?
+    let data: [CGFloat] = [1, 3, 5, 8]
+
+    var body: some View {
+        ZStack{
+            chartView?.frame(width: 200, height: 200)
+        }.onAppear{
+            chartView = BarChartView(values: data)
+        }
+    }
+}
+```
+
+### Line Chart
+
+```swift
+struct ExampleView : View {
+    
+    @State private var chartView : LineChartView?
+    let data: [CGFloat] = [1, 3, 5, 8]
+
+    var body: some View {
+        ZStack{
+            chartView?.frame(width: 200, height: 200)
+        }.onAppear{
+            chartView = LineChartView(values: data)
+            chartView?.setStyle(LineChartStyle(lineColor: .orange))
+            chartView?.rotate(byDegrees: 90, axis: .z)
+        }
+    }
+}
+```
+
+### Pie Chart
+
+```swift
+struct ExampleView : View {
+    
+    @State private var chartView : PieChartView?
+    let data: [(CGFloat, CGFloat)] = [(1,1), (2,2), (3,3), (4,4)]
+
+    var body: some View {
+        ZStack{
+            chartView?.frame(width: 200, height: 200)
+        }.onAppear{
+            chartView = PieChartView(values: data)
+        }
+    }
+}
+```
+
 ## Components
 
 ### Chart Views
