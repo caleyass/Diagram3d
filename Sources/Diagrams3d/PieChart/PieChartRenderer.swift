@@ -82,7 +82,7 @@ class PieChartRenderer: ChartRenderer {
             chartNode.addChildNode(sliceNode)
             
             if let title = slice.title, !title.isEmpty {
-                let labelNode = createLabelNode(text: title, angle: (startAngle + endAngle) / 2, radius: radius)
+                let labelNode = createLabelNode(text: title, angle: (startAngle + endAngle) / 2, radius: radius, height: slice.height ?? 0)
                 textFieldNode.addChildNode(labelNode)
             }
         }
@@ -111,13 +111,14 @@ class PieChartRenderer: ChartRenderer {
     ///   - text: The text to display on the label.
     ///   - angle: The angle (in radians) where the label is positioned.
     ///   - radius: The radius at which the label is placed.
+    ///   - height: The height at which the label is placed.
     /// - Returns: An `SCNNode` containing the label.
-    private func createLabelNode(text: String, angle: CGFloat, radius: Float) -> SCNNode {
+    private func createLabelNode(text: String, angle: CGFloat, radius: Float, height : CGFloat) -> SCNNode {
         let radiusOffset = radius * 1.2
         let position = SCNVector3(
             radiusOffset * cos(Float(angle)),
             radiusOffset * sin(Float(angle)),
-            0
+            Float(height)
         )
         return LabelGenerator.createLabelNode(text: text, at: position, labelFont: style.labelFont, labelColor: style.labelColor)
     }

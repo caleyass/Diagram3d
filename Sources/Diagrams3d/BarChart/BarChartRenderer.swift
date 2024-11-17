@@ -94,6 +94,7 @@ class BarChartRenderer: ChartRenderer {
             
             if let title = node.title {
                 let labelNode = createLabelNode(text: title, at: index)
+                labelNode.eulerAngles.z = -.pi/2
                 textFieldNode.addChildNode(labelNode)
             }
         }

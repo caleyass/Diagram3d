@@ -33,7 +33,7 @@ public struct BarChartView: UIViewRepresentable {
     
     /// The camera's position within the 3D scene.
     /// Defaults to `(x: 0, y: 0, z: 15)`.
-    public var cameraPosition: SCNVector3 = .init(x: 0, y: 0, z: 15)
+    public var cameraPosition: SCNVector3 = .init(x: 0, y: 0, z: 10)
     
     /// Determines if the user can control the camera with gestures.
     /// Defaults to `true`.
@@ -47,9 +47,6 @@ public struct BarChartView: UIViewRepresentable {
     
     /// The rotation angle for the text in degrees.
     private var rotationAngleText: Float = 0
-    
-    /// Tracks whether the SceneKit scene has been initialized.
-    @State private var isSceneInitialized: Bool = false
     
     // MARK: - Initializers
     
@@ -112,10 +109,6 @@ public struct BarChartView: UIViewRepresentable {
         let scene = renderer.setUpScene()
         sceneView.scene = scene
         setUpCamera(in: scene)
-        
-        DispatchQueue.main.async {
-            self.isSceneInitialized = true
-        }
 
         return sceneView
     }
@@ -143,10 +136,6 @@ public struct BarChartView: UIViewRepresentable {
         }
         uiView.allowsCameraControl = allowCameraControl
         
-        if isSceneInitialized {
-            renderer.rotateText(byDegrees: -90, axis: .z)
-            isSceneInitialized = false // Prevent repeated updates
-        }
     }
     
     /// Rotates the bar chart by a specified angle in degrees around a given axis.
