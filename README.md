@@ -1,6 +1,6 @@
 # Diagram3d
 
-This framework provides a flexible framework for rendering 3D charts in a SceneKit scene and has a SwiftUI integration. It supports bar chart, pie chart, and line chart, with customizable styles, axes, labels, and rotation angles. You can adjust camera control and position.
+This is a flexible framework for rendering 3D charts with SceneKit scene with SwiftUI integration. It supports bar chart, pie chart, and line chart, with customizable styles, axes, labels, and rotation angles. You can adjust camera control and position.
 
 ## Features
 
@@ -9,6 +9,8 @@ This framework provides a flexible framework for rendering 3D charts in a SceneK
 - **Pie Chart**: Render pie charts with labels, customizable colors, and heights.
 - **Customizable Axes**: You are provided with X, Y, and Z axes to your charts, with style you can edit: adjust thickness of line, arrow size, font size.
 - **SwiftUI Integration**: Use `UIViewRepresentable` components to integrate charts into SwiftUI views.
+
+Each chart has initializers for 2 or 3 dimensional values.
 
 ## Installation
 
@@ -42,6 +44,7 @@ struct ExampleView : View {
     }
 }
 ```
+![GitHub Logo](https://github.com/caleyass/Diagram3d/tree/main/Sources/Diagrams3d/barChart.png)
 
 ### Line Chart
 
@@ -62,6 +65,7 @@ struct ExampleView : View {
     }
 }
 ```
+![GitHub Logo](https://github.com/caleyass/Diagram3d/tree/main/Sources/Diagrams3d/lineChart.png)
 
 ### Pie Chart
 
@@ -80,31 +84,11 @@ struct ExampleView : View {
     }
 }
 ```
+![GitHub Logo](https://github.com/caleyass/Diagram3d/tree/main/Sources/Diagrams3d/pieChart.png)
 
-## Components
+## Realization description
 
-### Chart Views
+Each View is initialized via View class with specific parameters. After initialization you can set style , rotation, camera position or disable camera. Initializers contains array of CGFloat - it would initialize 3d chart with 1-dimensional value, or turples with CGFloat and Strings - it would initialize 3d chart with (2-3)-dimensional values and title for each chart node.
 
-- **`BarChartView`**: A SwiftUI-compatible view for rendering 3D bar charts.
-- **`LineChartView`**: A SwiftUI-compatible view for rendering 3D line charts.
-- **`PieChartView`**: A SwiftUI-compatible view for rendering 3D pie charts.
-
-### Chart Data
-
-- **`BarChartData`**: Represents data for 3D bar charts, including bar heights and optional labels.
-- **`LineChartData`**: Represents data for 3D line charts, including points in 3D space.
-- **`PieChartData`**: Represents data for 3D pie charts, including slice values, colors, and optional labels.
-
-### Renderers
-
-- **`BarChartRenderer`**: Responsible for rendering 3D bar charts in a SceneKit scene.
-- **`LineChartRenderer`**: Responsible for rendering 3D line charts in a SceneKit scene.
-- **`PieChartRenderer`**: Responsible for rendering 3D pie charts in a SceneKit scene.
-
-### Utilities
-
-- **`AxisGenerator`**: Generates labeled 3D axes for charts.
-- **`LabelGenerator`**: Creates 3D labels for axes and chart elements.
-- **`ChartStyle`**: A base class for defining chart appearance.
 
 
